@@ -3,7 +3,7 @@
 
   var Unquote = window.Unquote;
 
-  Unquote.router = Backbone.Router.extend({
+  var MainRouter = Backbone.Router.extend({
     initialize: function () {
       this.route('', 'allAction');
       this.route('all', 'allAction');
@@ -16,4 +16,6 @@
       console.log('fav action');
     }
   });
+
+  Unquote.router = new MainRouter();
 })();
