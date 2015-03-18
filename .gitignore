@@ -25,3 +25,6 @@ bower_components
 
 # Users Environment Variables
 .lock-wscript
+
+# IDE Files
+.brackets.json
