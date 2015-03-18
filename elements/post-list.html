@@ -13,12 +13,34 @@
     }
     </style>
 
-    <!-- add markup here -->
+    <div layout vertical center>
+
+      <template repeat="{{post in posts}}">
+        <post-card>
+          <img src="{{post.avatar}}" width="70" height="70">
+          <h2>{{post.username}}</h2>
+          <p>{{post.text}}</p>
+        </post-card>
+      </template>
+
+    </div>
 
   </template>
 
   <script>
-  Polymer({});
+    Polymer({
+      created: function () {
+        this.posts = [];
+      },
+      attached: function () {
+        Unquote.posts.on('reset add remove', function () {
+          this.posts = Unquote.posts.toJSON();
+        }, this);
+      },
+      detached: function () {
+        Unquote.posts.off(null, null, this);
+      }
+    });
   </script>
 
 </polymer-element>

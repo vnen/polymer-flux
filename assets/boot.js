@@ -12,6 +12,8 @@
       tabs.selected = route;
     });
 
+    Unquote.posts.fetch();
+
     Backbone.history.start();
   });
 })();
