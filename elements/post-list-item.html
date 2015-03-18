@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="post-card.html">
+
+<polymer-element name="post-list-item">
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        background-color: white;
+        padding: 20px;
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
+    </style>
+    <post-card class="card" favorite="{{post.attributes.favorite}}" on-favorite-tap="{{handleFavorite}}">
+      <img src="{{post.attributes.avatar}}" width="70" height="70" />
+      <h2>{{post.attributes.username}}</h2>
+      <p>{{post.attributes.text}}</p>
+    </post-card>
+  </template>
+  <script>
+    Polymer({
+      publish: {
+        post: {
+          value: null,
+          reflect: true
+        }
+      },
+      handleFavorite: function (event, detail, sender) {
+        if (this.post) {
+          Unquote.postActions.favorite(this.post.get('uid'));
+        }
+      }
+    });
+  </script>
+</polymer-element>

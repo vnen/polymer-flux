@@ -1,5 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="post-card.html">
+<link rel="import" href="post-list-item.html">
 
 <polymer-element name="post-list" attributes="show">
   <template>
@@ -8,7 +8,7 @@
       display: block;
       width: 100%;
     }
-    post-card {
+    post-list-item {
       margin-bottom: 30px;
     }
     </style>
@@ -16,11 +16,7 @@
     <div layout vertical center>
 
       <template repeat="{{post in posts}}">
-        <post-card favorite="{{post.favorite}}" on-favorite-tap="{{handleFavorite}}">
-          <img src="{{post.avatar}}" width="70" height="70">
-          <h2>{{post.username}}</h2>
-          <p>{{post.text}}</p>
-        </post-card>
+        <post-list-item post="{{post}}"></post-list-item>
       </template>
 
     </div>
@@ -34,7 +30,7 @@
       },
       attached: function () {
         Unquote.posts.on('reset add remove', function () {
-          this.posts = Unquote.posts.toJSON();
+          this.posts = Unquote.posts.models;
         }, this);
       },
       detached: function () {
