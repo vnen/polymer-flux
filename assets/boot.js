@@ -4,6 +4,7 @@
 
     Unquote.dispatcher = new Flux.Dispatcher();
     Unquote.posts = new Unquote.PostsCollection();
+    Unquote.view = new Unquote.ViewModel();
 
     tabs.addEventListener('core-select', function () {
       Unquote.router.navigate(tabs.selected, { trigger: true });
