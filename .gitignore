@@ -21,7 +21,8 @@ build/Release
 
 # Dependencies directories
 node_modules
-bower_components
+# bower_components
+# Bower dependencies are needed to run it statically
 
 # Users Environment Variables
 .lock-wscript
