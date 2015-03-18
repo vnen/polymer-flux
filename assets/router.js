@@ -5,14 +5,14 @@
 
   var MainRouter = Backbone.Router.extend({
     initialize: function () {
-      this.route('', 'allAction');
-      this.route('all', 'allAction');
-      this.route('favorites', 'favAction');
+      this.route('', 'all');
+      this.route('all', 'all');
+      this.route('favorites', 'favorites');
     },
-    allAction: function () {
+    all: function () {
       console.log('all action');
     },
-    favAction: function () {
+    favorites: function () {
       console.log('fav action');
     }
   });
