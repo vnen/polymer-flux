@@ -3,7 +3,7 @@
   "globals": {
     "Backbone": true,
     "Polymer": true,
-    "Dispatcher": true,
+    "Flux": true,
     "$": true
   }
 }
