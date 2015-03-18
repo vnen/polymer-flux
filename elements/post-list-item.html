@@ -30,7 +30,7 @@
       },
       handleFavorite: function (event, detail, sender) {
         if (this.post) {
-          Unquote.postActions.favorite(this.post.get('uid'));
+          Unquote.postActions.favorite(this.post.id);
         }
       }
     });

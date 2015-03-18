@@ -30,15 +30,30 @@
       },
       attached: function () {
         Unquote.posts.on('reset add remove', function () {
-          this.posts = Unquote.posts.models;
+          this.posts = this.getPosts();
         }, this);
+        Unquote.view.on('change:page', function (model, page) {
+          this.posts = this.getPosts();
+        }, this);
+      },
+      getPosts: function () {
+        switch (Unquote.view.get('page')) {
+          case 'all': {
+            return Unquote.posts.models;
+          }
+          case 'favorites': {
+            return Unquote.posts.filter(function (post) {
+              return post.get('favorite');
+            });
+          }
+          default: {
+            return [];
+          }
+        }
       },
       detached: function () {
         Unquote.posts.off(null, null, this);
-      },
-      handleFavorite: function (event, detail, sender) {
-        var post = sender.templateInstance.model.post;
-        Unquote.postActions.favorite(post.uid);
+        Unquote.view.off(null, null, this);
       }
     });
   </script>

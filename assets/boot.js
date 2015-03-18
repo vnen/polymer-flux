@@ -14,7 +14,7 @@
       tabs.selected = route;
     });
 
-    Unquote.posts.fetch();
+    Unquote.posts.fetch({ reset: true });
 
     Backbone.history.start();
   });
