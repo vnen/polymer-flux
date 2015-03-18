@@ -23,6 +23,7 @@
   <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
   <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="elements/post-card.html">
 
   <!-- Load styles -->
   <link rel="stylesheet" href="css/main.css">
@@ -39,7 +40,16 @@
       </paper-tabs>
     </core-toolbar>
 
-    <!-- main page content will go here -->
+    <div class="container" layout vertical center>
+
+      <post-card>
+        <img width="70" height="70"
+          src="images/avatar-07.svg">
+        <h2>Another Developer</h2>
+        <p>I'm composing with shadow DOM!</p>
+      </post-card>
+
+    </div>
 
   </core-header-panel>
   <script src="assets/boot.js"></script>
