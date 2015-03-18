@@ -25,7 +25,7 @@
     "text" : "Pretty sure I came up with that first.",
     "username" : "Ada",
     "avatar" : "images/avatar-07.svg",
-    "favorite": false
+    "favorite": true
   },
   {
     "uid": 5,
@@ -39,7 +39,7 @@
     "text" : "Centralize, centrailize.",
     "username" : "John",
     "avatar" : "images/avatar-04.svg",
-    "favorite": false
+    "favorite": true
   },
   {
     "uid": 7,
