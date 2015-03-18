@@ -10,10 +10,10 @@
       this.route('favorites', 'favorites');
     },
     all: function () {
-      console.log('all action');
+      Unquote.viewActions.changePage('all');
     },
     favorites: function () {
-      console.log('fav action');
+      Unquote.viewActions.changePage('favorites');
     }
   });
 
