@@ -14,10 +14,21 @@
     idAttribute: 'uid'
   });
 
-  var PostsCollection = Backbone.Collection.extend({
+  Unquote.PostsCollection = Backbone.Collection.extend({
     model: PostModel,
-    url: 'api/posts.json'
+    url: 'api/posts.json',
+    initialize: function () {
+      Unquote.dispatcher.register(this.dispatchCallback.bind(this));
+    },
+    dispatchCallback: function (payload) {
+      switch (payload.actionType) {
+          case 'postFavorite': {
+            var post = this.findWhere({ uid: payload.post });
+            if (post) {
+              post.set('favorite', !post.get('favorite'));
+            }
+          }
+      }
+    }
   });
-
-  Unquote.posts = new PostsCollection();
 })();

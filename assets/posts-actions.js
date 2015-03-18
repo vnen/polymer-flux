@@ -4,10 +4,10 @@
   var Unquote = window.Unquote;
 
   Unquote.postActions = {
-    favorite: function (post) {
+    favorite: function (postId) {
       Unquote.dispatcher.dispatch({
         actionType: 'postFavorite',
-        post: post
+        post: postId
       });
     }
   };

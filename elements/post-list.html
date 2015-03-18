@@ -42,7 +42,7 @@
       },
       handleFavorite: function (event, detail, sender) {
         var post = sender.templateInstance.model.post;
-        Unquote.postActions.favorite(post);
+        Unquote.postActions.favorite(post.uid);
       }
     });
   </script>

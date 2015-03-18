@@ -3,6 +3,7 @@
     var tabs = document.querySelector('paper-tabs');
 
     Unquote.dispatcher = new Flux.Dispatcher();
+    Unquote.posts = new Unquote.PostsCollection();
 
     tabs.addEventListener('core-select', function () {
       Unquote.router.navigate(tabs.selected, { trigger: true });
