@@ -1,0 +1,43 @@
+{
+  "name": "polymer-flux",
+  "version": "0.1.0",
+  "authors": [
+    "George Marques <george@georgemarques.com.br>"
+  ],
+  "description": "A sample Polymer + Backbone.js + Flux application.",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "polymer",
+    "flux",
+    "backbone",
+    "react",
+    "mvc",
+    "javascript",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vnen/polymer-flux",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "webcomponentsjs": "~0.5.5",
+    "core-icon-button": "Polymer/core-icon-button#^0.5.0",
+    "font-roboto": "Polymer/font-roboto#^0.5.0",
+    "core-header-panel": "Polymer/core-header-panel#^0.5.0",
+    "core-toolbar": "Polymer/core-toolbar#^0.5.0",
+    "paper-tabs": "Polymer/paper-tabs#^0.5.0",
+    "core-ajax": "Polymer/core-ajax#^0.5.0",
+    "backbone": "~1.1.2",
+    "flux": "~2.0.2"
+  }
+}
