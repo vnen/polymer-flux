@@ -1,6 +1,5 @@
-<link rel="import" href="../components/polymer/polymer.html">
-<link rel="import" href="../post-service/post-service.html">
-<link rel="import" href="post-card.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="post-list-item.html">
 
 <polymer-element name="post-list" attributes="show">
   <template>
@@ -9,17 +8,54 @@
       display: block;
       width: 100%;
     }
-    post-card {
+    post-list-item {
       margin-bottom: 30px;
     }
     </style>
 
-    <!-- add markup here -->
+    <div layout vertical center>
+
+      <template repeat="{{post in posts}}">
+        <post-list-item post="{{post}}"></post-list-item>
+      </template>
+
+    </div>
 
   </template>
 
   <script>
-  Polymer({});
+    Polymer({
+      created: function () {
+        this.posts = [];
+      },
+      attached: function () {
+        Unquote.posts.on('reset add remove', function () {
+          this.posts = this.getPosts();
+        }, this);
+        Unquote.view.on('change:page', function (model, page) {
+          this.posts = this.getPosts();
+        }, this);
+      },
+      getPosts: function () {
+        switch (Unquote.view.get('page')) {
+          case 'all': {
+            return Unquote.posts.models;
+          }
+          case 'favorites': {
+            return Unquote.posts.filter(function (post) {
+              return post.get('favorite');
+            });
+          }
+          default: {
+            return [];
+          }
+        }
+      },
+      detached: function () {
+        Unquote.posts.off(null, null, this);
+        Unquote.view.off(null, null, this);
+      }
+    });
   </script>
 
 </polymer-element>

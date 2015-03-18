@@ -1,6 +1,6 @@
 {
   "name": "polymer-flux",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
     "George Marques <george@georgemarques.com.br>"
   ],
@@ -38,6 +38,7 @@
     "paper-tabs": "Polymer/paper-tabs#^0.5.0",
     "core-ajax": "Polymer/core-ajax#^0.5.0",
     "backbone": "~1.1.2",
-    "flux": "~2.0.2"
+    "flux": "~2.0.2",
+    "jquery": "~2.1.3"
   }
 }

@@ -1,0 +1,9 @@
+{
+	"browser": true,
+  "globals": {
+    "Backbone": true,
+    "Polymer": true,
+    "Flux": true,
+    "$": true
+  }
+}
