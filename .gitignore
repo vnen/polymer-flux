@@ -28,3 +28,4 @@ bower_components
 
 # IDE Files
 .brackets.json
+.idea
